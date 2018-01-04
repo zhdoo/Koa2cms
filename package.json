@@ -1,0 +1,19 @@
+{
+  "name": "koa2cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bson": "^1.0.4",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-nunjucks-2": "^3.0.2",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2"
+  }
+}
