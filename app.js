@@ -6,9 +6,8 @@ const bodyParser = require('koa-bodyparser')
 const router = require('koa-router')();
 const app = new Koa()
 
-
 const home = require('./routers/home')
-const admin = require('./routers/admin')
+const adminRoute = require('./routers/admin')
 // 引入 koa-static
 const staticFiles = require('koa-static')
 
@@ -27,10 +26,7 @@ app.use(nunjucks({
 
 app.use(bodyParser())
 
-router.use('/', home.routes(), home.allowedMethods());
-router.use('/admin', admin.routes(), admin.allowedMethods());
-
-app.use(router.routes(), router.allowedMethods())
+adminRoute(app)
 
 app.listen(3000, () => {
 	console.log('server is running at http://localhost:3000')

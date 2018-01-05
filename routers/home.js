@@ -3,4 +3,6 @@ const HomeIndexController = require('../controller/home/index')
 
 router.get('/', HomeIndexController.index)
 
+
+
 module.exports = router
