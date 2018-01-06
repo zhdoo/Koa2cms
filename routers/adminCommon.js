@@ -1,8 +1,8 @@
 const router = require('koa-router')()
 
-const HomeIndexController = require('../controller/home/index')
+const AdminCommonController = require('../controller/admin/common')
  module.exports = (app) => {
-    router.get( '/', HomeIndexController.index )
+    router.get( '/admin/login', AdminCommonController.login )
     app.use(router.routes())
       .use(router.allowedMethods())
   }

@@ -3,10 +3,16 @@ const AdminIndexService = require('../../service/admin/index')
 
 module.exports={
 	index: async(ctx,next)=>{
+	
+		if (ctx.path === '/favicon.ico') return;
+		let n = ctx.session.userInfo || 0;
+		if (n==0) {
+		  // console.log(123)
+		  	ctx.response.redirect('/login');
+		}
+		let userInfo = await AdminIndexService.getSysInfo()
+		console.log(userInfo) 
 		await ctx.render("admin/index")
-		let userInfo =  AdminIndexService.getSysInfo()
-		console.log(userInfo)
-		return
 
 	},
 	main: async(ctx,next)=>{
